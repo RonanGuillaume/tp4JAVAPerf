@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.polytechtours.javaperformance.tp</groupId>
+    <artifactId>tp4</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <trove.version>3.0.3</trove.version>
+        <guava.version>23.0</guava.version>
+        <commons-collection.version>4.1</commons-collection.version>
+        <javolution.version>6.0.0</javolution.version>
+        <fastutil.version>8.1.1</fastutil.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.sources>1.8</java.sources>
+        <java.target>1.8</java.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.sf.trove4j</groupId>
+                <artifactId>trove4j</artifactId>
+                <version>${trove.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collection.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javolution</groupId>
+                <artifactId>javolution-core-java</artifactId>
+                <version>${javolution.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.unimi.dsi</groupId>
+                <artifactId>fastutil</artifactId>
+                <version>${fastutil.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.trove4j</groupId>
+            <artifactId>trove4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.javolution</groupId>
+            <artifactId>javolution-core-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.unimi.dsi</groupId>
+            <artifactId>fastutil</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.polytechtours.javaperformance.tp.tp4.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
